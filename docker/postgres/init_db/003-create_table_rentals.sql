@@ -1,13 +1,14 @@
-create table if not exists rentals
+CREATE TABLE IF NOT EXISTS rentals
 (
-    id          serial,
-    customer_id integer not null,
-    car_id      integer not null,
-    start_date  date    not null,
-    end_date    date    not null,
-    primary key (id),
-    constraint rentals_customer_id__customers_id
-        foreign key (customer_id) references customers,
-    constraint rentals_car_id__cars_id
-        foreign key (car_id) references cars
+    id          SERIAL,
+    customer_id INTEGER NOT NULL,
+    car_vin     TEXT    NOT NULL,
+    start_date  DATE    NOT NULL,
+    end_date    DATE    NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT rentals_customer_id__customers_id
+        FOREIGN KEY (customer_id) REFERENCES customers,
+    CONSTRAINT rentals_car_vin__cars_vin
+        FOREIGN KEY (car_vin) REFERENCES cars
 );
+

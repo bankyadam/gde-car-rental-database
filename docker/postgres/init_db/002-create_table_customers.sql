@@ -1,27 +1,27 @@
-create type id_card_type as enum ('id', 'passport', 'drivers_licence');
+CREATE TYPE id_card_type AS ENUM ('id', 'passport', 'drivers_licence');
 
-create table if not exists customers
+CREATE TABLE IF NOT EXISTS customers
 (
-    id                      serial,
-    tax_number              text,
-    is_company              boolean      not null,
-    company_name            text,
-    first_name              text         not null,
-    last_name               text         not null,
-    birthdate               date         not null,
-    birthplace              text         not null,
-    mothers_name            text         not null,
-    id_card_type            id_card_type not null,
-    id_card_number          text         not null,
-    email                   text         not null,
-    phone_number            text         not null,
-    home_address_country    text         not null,
-    home_address_zip        text         not null,
-    home_address_town       text         not null,
-    home_address_street     text         not null,
-    invoice_address_country text         not null,
-    invoice_address_zip     text         not null,
-    invoice_address_town    text         not null,
-    invoice_address_street  text         not null,
-    primary key (id)
+    id                      SERIAL,
+    is_company              BOOLEAN      NOT NULL,
+    company_name            TEXT,
+    tax_number              TEXT,
+    first_name              TEXT         NOT NULL,
+    last_name               TEXT         NOT NULL,
+    birthdate               DATE         NOT NULL,
+    birthplace              TEXT         NOT NULL,
+    mothers_name            TEXT         NOT NULL,
+    id_card_type            id_card_type NOT NULL,
+    id_card_number          TEXT         NOT NULL,
+    email                   TEXT         NOT NULL,
+    phone_number            TEXT         NOT NULL,
+    home_address_country    TEXT         NOT NULL,
+    home_address_zip        TEXT         NOT NULL,
+    home_address_town       TEXT         NOT NULL,
+    home_address_street     TEXT         NOT NULL,
+    invoice_address_country TEXT         NOT NULL,
+    invoice_address_zip     TEXT         NOT NULL,
+    invoice_address_town    TEXT         NOT NULL,
+    invoice_address_street  TEXT         NOT NULL,
+    PRIMARY KEY (id)
 );
