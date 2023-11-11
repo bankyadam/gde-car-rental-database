@@ -57,7 +57,7 @@ INSERT INTO
     SELECT
         rental_id,
         'rent_end'::rental_event_type,
-        (event_time + 1 + RANDOM() * INTERVAL '30 days')::DATE
+        (event_time + INTERVAL '1 day' + RANDOM() * INTERVAL '30 days')::DATE
     FROM
         rental_events
     WHERE
