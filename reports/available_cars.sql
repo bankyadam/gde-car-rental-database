@@ -1,0 +1,1 @@
+SELECT * FROM cars WHERE status = 'rentable'::car_status;
